@@ -7,7 +7,6 @@ export default function home() {
 
   const handleChange = (e: any) => {
     const { name, value} = e.target;
-    console.log(`${name}: ${value}`);
     setFormData((prev: any) => ({ ...prev, [name]: value }));
   };
 
@@ -26,7 +25,7 @@ export default function home() {
     const res = await req.json();
 
     if (req.status >= 200) {
-      setResponse(res);
+      setResponse(res as string);
     }
 
     console.log(res);
